@@ -4,7 +4,7 @@
   "description": "for server",
   "main": "index.js",
   "scripts": {
-    "start_dev": "nodemon -r dotenv/config index.js"
+    "start_dev": "node -r dotenv/config index.js"
   },
   "author": "nikEvs",
   "license": "ISC",
