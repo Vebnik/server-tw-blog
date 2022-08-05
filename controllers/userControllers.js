@@ -61,6 +61,16 @@ class UserControllers {
 
 	async getPost(req, res, next) {
 		try {
+
+			if (/\?/gmi.test(req.url)){
+
+				const [param, value] = decodeURI(req.url).replace(/\/posts\?/gmi, '').split('=')
+
+				otherMethod.searchPosts(param, value)
+					.then(results => res.json({ok: true, data: results.map(el => el.dataValues)}))
+				return
+			}
+
 			otherMethod.getAllPosts()
 				.then(results => res.json({ok: true, data: results.map(el => el.dataValues)}))
 		} catch (err) {

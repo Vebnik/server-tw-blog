@@ -1,5 +1,6 @@
 const tokenService = require('./tokenService')
 
+
 const validSession = (req, res, next) => {
 	try {
 		const authHeader = req.headers.authorization
@@ -16,6 +17,7 @@ const validSession = (req, res, next) => {
 
 	} catch (err) {
 		console.log(err)
+		//return new Error(err)
 	}
 }
 
@@ -26,7 +28,6 @@ const validSessionContext = (req, res, next) => {
 
 		if (!authHeader)
 			return res.json({message: 'not authorization', ok: false})
-
 
 		const accToken = authHeader.replace(/Bearer /, '')
 

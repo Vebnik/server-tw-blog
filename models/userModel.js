@@ -1,9 +1,7 @@
-const { Sequelize, DataTypes, Model } = require('sequelize');
-const path = require("path");
+const { DataTypes, Model } = require('sequelize');
 
 
 const createUserModel = (sequelize) => {
-
 
 	class UserModel extends Model {}
 

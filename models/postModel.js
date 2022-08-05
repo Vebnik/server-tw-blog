@@ -5,23 +5,19 @@ const createPostModel = (sequelize) => {
 	class PostModel extends Model {}
 
 	PostModel.init({
-		title: {
+		name: {
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
-		description: {
+		address: {
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
-		author: {
+		avatar: {
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
-		media: {
-			type: DataTypes.STRING,
-			allowNull: true,
-		},
-		createdAt: {
+		phone: {
 			type: DataTypes.STRING,
 			allowNull: true,
 		}

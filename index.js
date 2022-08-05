@@ -2,14 +2,10 @@ const express = require('express')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const app = express();
-const createModel = require('./models/createModels')
 const router = require('./router/routerIndex')
 
 // express ext
-app.use(cors({
-	credentials: true,
-	origin: process.env.CLIENT_URL
-}));
+app.use(cors( {credentials: true, origin: process.env.CLIENT_URL} ));
 app.use(express.json());
 app.use(cookie());
 app.use('/api', router)

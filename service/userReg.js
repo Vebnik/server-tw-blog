@@ -5,7 +5,7 @@ const tokenService = require('./tokenService')
 class UserReg {
 
 	async registerUser(email, password) {
-		const { userModel, tokenModel} = await createModel();
+		const { userModel } = await createModel();
 		await userModel.sync({alter: true})
 
 		const isExist = await userModel.findOne({ where: {email: email} })
@@ -28,7 +28,7 @@ class UserReg {
 	}
 
 	async loginUser(email, password) {
-		const { userModel, tokenModel} = await createModel();
+		const { userModel } = await createModel();
 		await userModel.sync({alter: true})
 
 		const user = await userModel.findOne({where: {email: email}})

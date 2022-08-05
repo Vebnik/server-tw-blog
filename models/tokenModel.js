@@ -1,5 +1,4 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-const path = require("path");
+const {Model, DataTypes } = require("sequelize");
 
 
 const createTokenModel = (sequelize) => {
@@ -7,7 +6,7 @@ const createTokenModel = (sequelize) => {
 	class TokenModel extends Model {}
 
 	TokenModel.init({
-		accToken: {
+		accToken: { // TODO Переписать зависмость на accessToken
 			type: DataTypes.STRING,
 			allowNull: true,
 		},

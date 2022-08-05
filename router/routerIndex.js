@@ -36,4 +36,5 @@ router.delete('/posts',
 router.patch('/posts',
 	validSession,
 	userCtrl.editPost)
+
 module.exports = router

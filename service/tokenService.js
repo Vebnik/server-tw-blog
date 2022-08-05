@@ -12,7 +12,7 @@ class TokenService {
 	}
 
 	async saveTokenDb(userId, accToken) {
-		const { userModel, tokenModel} = await createModel();
+		const { tokenModel} = await createModel();
 		await tokenModel.sync({alter: true})
 
 		const isExistToken = await tokenModel.findOne({where: {id: userId}})
@@ -26,7 +26,7 @@ class TokenService {
 	}
 
 	async validationToken (accToken) {
-		const { userModel, tokenModel} = await createModel();
+		const { tokenModel } = await createModel();
 
 		const isExistToken = await tokenModel.findOne({where: {accToken: accToken}})
 
